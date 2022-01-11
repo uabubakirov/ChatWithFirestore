@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signFragment">
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.chatwithfirestore.ui.fragments.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <argument
+            android:name="login"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/signFragment"
+        android:name="com.example.chatwithfirestore.ui.fragments.registrationandsign.sign.SignFragment"
+        android:label="fragment_sign"
+        tools:layout="@layout/fragment_sign" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.chatwithfirestore.ui.fragments.registrationandsign.registration.RegistrationFragment"
+        android:label="RegistrationFragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.chatwithfirestore.ui.fragments.mainmenu.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+</navigation>
